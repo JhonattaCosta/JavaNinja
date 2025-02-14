@@ -15,6 +15,7 @@ public class Main {
 
         while(rep){
             boolean rep2 = true;
+            boolean rep3 = true;
 
 
             System.out.println("------------------------");
@@ -56,7 +57,7 @@ public class Main {
                                 System.out.println("Qual valor deseja sacar ?");
                                 contaCorrente.valor = entrada.nextDouble();
                                 if (contaCorrente.valor > contaCorrente.saldo){
-                                    System.out.println("Valor maior que o saldo tente novamente");
+                                    System.out.println("Valor é maior que o saldo tente novamente");
                                 }else{
                                     contaCorrente.saldo = contaCorrente.sacar();
                                 }
@@ -72,7 +73,7 @@ public class Main {
                     break;
                 case 2:
 
-                    while (rep2){
+                    while (rep3){
                         System.out.println("------------------------");
                         System.out.println("Escolha uma opção");
                         System.out.println("1 - Ver Saldo");
@@ -94,8 +95,23 @@ public class Main {
                                 break;
                             case 3:
                                 System.out.println("Qual valor deseja Sacar ?");
+                                contaPoupanca.valor = entrada.nextDouble();
+                                if(contaPoupanca.valor > contaPoupanca.saldo){
+                                    System.out.println("O valor é maior que o saldo tente novamente");
+                                }else{
+                                    contaPoupanca.saldo = contaPoupanca.sacar();
+                                }
+                                break;
+                            case 4:
+                                rep3 = false;
+                                break;
+                            default:
+                                System.out.println("Opção invalida digite novamente");
+                                break;
+
                         }
                     }
+                    break;
 
                 case 3:
                     rep =false;
